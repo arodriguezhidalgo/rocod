@@ -3,6 +3,12 @@ body {
     padding: 0;
 }
 
+h1 {
+    font-size: 4rem;
+}
+
+h2 {font-size: 3rem;}
+
 .gym-options {
     /* This one forces the buttons to have the same width */
     /* width: fit-content; */
@@ -15,7 +21,7 @@ body {
     list-style: none;
     background-color: #808080;
     width: 20rem;
-    height: 5rem;    
+    height: 5rem;
     margin: 1px;
     border: solid 1px;
 
@@ -23,6 +29,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 2rem;
 }
 
 .gym-button:hover {

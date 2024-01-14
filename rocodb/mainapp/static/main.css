@@ -59,21 +59,19 @@ h2 {
 
 .modal-content {
     position: absolute;
-    top: 30%;
-    height: 100%;
-    width: 100%;
-}
-
-.create-gym-container {    
-    position: relative;
+    top: 20%;
+    height: auto;
     width: 50%;
-    background-color: var(--whiteish-color);
-    font-size: 1.5rem;    
+    display: flex;
+    justify-content: center;
 }
 
+.create-gym-container {
+    background-color: var(--whiteish-color);
+    font-size: 1.5rem;
+}
 
-
-.modal-text {    
+.modal-text {
     background-color: var(--basic-green-color);
     color: black;
     padding: 0;
@@ -126,7 +124,8 @@ h2 {
     padding: 10px 20px;
     align-items: center;
     border: solid var(--dark-color);
-    border-radius: 5px;;
+    border-radius: 5px;
+    ;
     cursor: pointer;
     background-color: var(--dark-color);
     color: var(--whiteish-color);

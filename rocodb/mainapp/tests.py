@@ -46,4 +46,11 @@ class IntegrationGym(TestCase):
                {"name": "rocket",
                 "address": "fake 123"});
 
+        # Get the handle to the model, and check that the entry was successfully created.
+        self.assertEqual(Gym.objects.get(pk=1).address, "fake 123");
+
+        # Also, check that the properties that we didn't populate received the default value.
+        self.assertEqual(Gym.objects.get(pk=1).post_code, "<default>");
+        
+
         

@@ -5,4 +5,5 @@
 () List items whenever users press the button to see available gyms.
 () Include section for description in the create modal.
 () Include "Upload picture" section in the create modal.
+() Include TS function that checks that *some fields of the form are fulfilled (the most important being the name).
 

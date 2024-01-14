@@ -104,14 +104,6 @@ h2 {
     font-size: 1.5rem;
 }
 
-/* 
-#send-form-button {
-    cursor: pointer;    
-    width: 100%;
-    color: var(--whiteish-color);
-    background-color: var(--dark-color);
-} */
-
 .form-buttons {
     width: 100%;
     display: flex;

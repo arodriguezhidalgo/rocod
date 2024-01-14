@@ -19,10 +19,10 @@
     </ul>
 
     <div id="create-gym-modal" class="modal">
-        <div class="modal-content" onclick="document.querySelector(`#create-gym-modal`).style.display='none'">
+        <div class="modal-content">
             <div class="create-gym-container">
                 <h1 class="modal-text">Create a new gym</h1>
-                <form action="no-op" class="create-gym-form">
+                <form  class="create-gym-form">
                     <!-- Name -->
                     <ul>
                         <li>
@@ -92,9 +92,10 @@
                     </ul>
 
                     <div class="form-buttons">
-                        <div class="send-form-button">
+                        <div class="send-form-button" onclick="document.querySelector('.create-gym-form').submit()">
                             Create
                         </div>
+                        
                         <!-- When clicked, the cancel button closes the modal -->
                         <div class="send-form-button"
                             onclick="document.querySelector(`#create-gym-modal`).style.display='none'">

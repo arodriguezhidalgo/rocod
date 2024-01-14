@@ -1,6 +1,8 @@
 :root {
     --whiteish-color: white;
     --basic-green-color: #84e28c;
+    --dark-color: #000000;
+    --less-dark-color: #252525;
 }
 
 body {
@@ -74,6 +76,7 @@ h2 {
     background-color: var(--whiteish-color);
     justify-content: right;
     width: 100%;
+    /* cursor: pointer; */
     /* Align the button to the right side */
     display: flex;
     justify-content: right;
@@ -101,20 +104,43 @@ h2 {
 }
 
 .form-item-label {
-    padding:  0;
+    padding: 0;
     margin: 0;
 }
 
 .form-item-input {
     padding: 0;
     margin: 0;
-    width: 20rem;    
+    width: 20rem;
     font-size: 1.5rem;
 }
 
+/* 
 #send-form-button {
     cursor: pointer;    
     width: 100%;
     color: var(--whiteish-color);
-    background-color: black;
+    background-color: var(--dark-color);
+} */
+
+.form-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.send-form-button {
+    /* width: 120px; */
+    margin: 10px 20px;
+    padding: 10px 20px;
+    align-items: center;
+    border: solid var(--dark-color);
+    border-radius: 5px;;
+    cursor: pointer;
+    background-color: var(--dark-color);
+    color: var(--whiteish-color);
+}
+
+.send-form-button:hover {
+    background-color: var(--less-dark-color);
 }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    {% load static %}    
+    {% load static %}
     <link rel="stylesheet" href="{% static 'main.css' %}">
 </head>
 
@@ -14,8 +14,18 @@
     <h2>Gyms</h2>
     <ul class="gym-options">
         <li class="gym-button">Find gym</li>
-        <li class="gym-button">Create gym</li>
+        <li class="gym-button" onclick="document.querySelector(`#create-gym-modal`).style.display='block'">Create gym
+        </li>
     </ul>
+
+    <div id="create-gym-modal" class="modal">
+        <div class="modal-content">
+            <div class="create-gym-container">
+                <span class="close-button display-topright" onclick="document.querySelector(`#create-gym-modal`).style.display='none'">&times</span>
+                <p class="modal-text">some text</p>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

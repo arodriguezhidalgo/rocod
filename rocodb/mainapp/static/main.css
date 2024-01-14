@@ -1,3 +1,7 @@
+:root {
+    --whiteish-color: white;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -7,7 +11,9 @@ h1 {
     font-size: 4rem;
 }
 
-h2 {font-size: 3rem;}
+h2 {
+    font-size: 3rem;
+}
 
 .gym-options {
     /* This one forces the buttons to have the same width */
@@ -19,7 +25,7 @@ h2 {font-size: 3rem;}
 
 .gym-button {
     list-style: none;
-    background-color: #808080;
+    background-color: #84e28c;
     width: 20rem;
     height: 5rem;
     margin: 1px;
@@ -34,5 +40,49 @@ h2 {font-size: 3rem;}
 
 .gym-button:hover {
     cursor: pointer;
-    background-color: #c0bebe;
+    background-color: #8aee92;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-color: rgb(0, 0, 0, 0.4)
+}
+
+.modal-content {
+    position: absolute;
+    top: 30%;
+    height: 100%;
+    width: 100%;
+}
+
+.create-gym-container {
+    position: relative;
+    width: 500px;
+    background-color: var(--whiteish-color);
+    font-size: 2rem;
+}
+
+.close-button {
+    color: black;
+    background-color: var(--whiteish-color);
+    justify-content: right;
+    width: 100%;    
+    /* Align the button to the right side */
+    display: flex;
+    justify-content: right;
+}
+
+.modal-text {
+    background-color: red;
+    color: var(--whiteish-color);
+    padding: 0;
+    margin: 0;    
+    width: 100%;
+    
 }

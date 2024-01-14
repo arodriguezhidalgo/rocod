@@ -22,7 +22,8 @@
         <div class="modal-content">
             <div class="create-gym-container">
                 <h1 class="modal-text">Create a new gym</h1>
-                <form  class="create-gym-form">
+                <form class="create-gym-form" method="post">
+                    {% csrf_token %}
                     <!-- Name -->
                     <ul>
                         <li>
@@ -95,7 +96,7 @@
                         <div class="send-form-button" onclick="document.querySelector('.create-gym-form').submit()">
                             Create
                         </div>
-                        
+
                         <!-- When clicked, the cancel button closes the modal -->
                         <div class="send-form-button"
                             onclick="document.querySelector(`#create-gym-modal`).style.display='none'">

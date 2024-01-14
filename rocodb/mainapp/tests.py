@@ -31,8 +31,19 @@ class GymTestCase(TestCase):
         # Retrieve the entry we just created, then assert the default values.
         entry = Gym.objects.get(name=specimenName);
 
+
         self.assertEqual(entry.address, defaultValue);
         self.assertEqual(entry.country, defaultValue);
         self.assertEqual(entry.post_code, defaultValue);
         self.assertEqual(entry.description, defaultValue);
      
+
+from django.test import Client
+class IntegrationGym(TestCase):
+    def test_receives_info_from_form(self):
+        c = Client();
+        c.post("/gyms/", 
+               {"name": "rocket",
+                "address": "fake 123"});
+
+        

@@ -64,25 +64,16 @@ h2 {
     width: 100%;
 }
 
-.create-gym-container {
+.create-gym-container {    
     position: relative;
     width: 50%;
     background-color: var(--whiteish-color);
-    font-size: 1.5rem;
+    font-size: 1.5rem;    
 }
 
-.close-button {
-    color: black;
-    background-color: var(--whiteish-color);
-    justify-content: right;
-    width: 100%;
-    /* cursor: pointer; */
-    /* Align the button to the right side */
-    display: flex;
-    justify-content: right;
-}
 
-.modal-text {
+
+.modal-text {    
     background-color: var(--basic-green-color);
     color: black;
     padding: 0;

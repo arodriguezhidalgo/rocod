@@ -21,8 +21,87 @@
     <div id="create-gym-modal" class="modal">
         <div class="modal-content">
             <div class="create-gym-container">
-                <span class="close-button display-topright" onclick="document.querySelector(`#create-gym-modal`).style.display='none'">&times</span>
-                <p class="modal-text">some text</p>
+                <span class="close-button display-topright"
+                    onclick="document.querySelector(`#create-gym-modal`).style.display='none'">&times</span>
+                <h1 class="modal-text">Create a new gym</h1>
+                <form action="no-op" class="create-gym-form">
+                    <!-- Name -->
+                    <ul>
+                        <li>
+                            <label for="name" class="form-item-label">Name</label>
+                        </li>
+
+                        <li>
+                            <input type="text" name="name" class="form-item-input">
+                        </li>
+                    </ul>
+
+                    <!-- Address line 1-->
+                    <ul>
+                        <li>
+                            <label for="address-line-1" class="form-item-label">Address line 1</label>
+                        </li>
+
+                        <li>
+                            <input type="text" name="address-line-1" class="form-item-input">
+                        </li>
+                    </ul>
+
+
+                    <!-- Address line 2-->
+                    <ul>
+                        <li>
+                            <label for="address-line-2" class="form-item-label">Address line 2</label>
+                        </li>
+
+                        <li>
+                            <input type="text" name="address-line-2" class="form-item-input">
+                        </li>
+                    </ul>
+
+
+                    <!-- City-->
+                    <ul>
+                        <li>
+                            <label for="city" class="form-item-label">City</label>
+                        </li>
+
+                        <li>
+                            <input type="text" name="city" class="form-item-input">
+                        </li>
+                    </ul>
+
+                    <!-- Post code -->
+                    <ul>
+                        <li>
+                            <label for="post-code" class="form-item-label">Post-code</label>
+                        </li>
+
+                        <li>
+                            <input type="text" name="post-code" class="form-item-input">
+                        </li>
+                    </ul>
+
+
+                    <!-- Country -->
+                    <ul>
+                        <li>
+                            <label for="country" class="form-item-label">Country</label>
+                        </li>
+
+                        <li>
+                            <input type="text" name="country" class="form-item-input">
+                        </li>
+                    </ul>
+
+                    <div id="send-form-button">
+                        Create
+                    </div>
+                    <div id="send-form-button">
+                        Cancel
+                    </div>
+
+                </form>
             </div>
         </div>
     </div>

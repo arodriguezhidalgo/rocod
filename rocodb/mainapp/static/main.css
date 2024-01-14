@@ -1,5 +1,6 @@
 :root {
     --whiteish-color: white;
+    --basic-green-color: #84e28c;
 }
 
 body {
@@ -25,7 +26,7 @@ h2 {
 
 .gym-button {
     list-style: none;
-    background-color: #84e28c;
+    background-color: var(--basic-green-color);
     width: 20rem;
     height: 5rem;
     margin: 1px;
@@ -63,26 +64,57 @@ h2 {
 
 .create-gym-container {
     position: relative;
-    width: 500px;
+    width: 50%;
     background-color: var(--whiteish-color);
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .close-button {
     color: black;
     background-color: var(--whiteish-color);
     justify-content: right;
-    width: 100%;    
+    width: 100%;
     /* Align the button to the right side */
     display: flex;
     justify-content: right;
 }
 
 .modal-text {
-    background-color: red;
-    color: var(--whiteish-color);
+    background-color: var(--basic-green-color);
+    color: black;
     padding: 0;
-    margin: 0;    
+    margin: 0;
     width: 100%;
-    
+}
+
+.create-gym-form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Apply style to the ul that is child of .create-gym-form */
+.create-gym-form>ul {
+    list-style: none;
+    padding-right: 10px;
+    margin: 0;
+    padding: 10px 30px;
+}
+
+.form-item-label {
+    padding:  0;
+    margin: 0;
+}
+
+.form-item-input {
+    padding: 0;
+    margin: 0;
+    width: 20rem;    
+    font-size: 1.5rem;
+}
+
+#send-form-button {
+    cursor: pointer;    
+    width: 100%;
+    color: var(--whiteish-color);
+    background-color: black;
 }

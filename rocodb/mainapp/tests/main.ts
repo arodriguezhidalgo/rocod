@@ -1,1 +1,0 @@
-test("AAA", () => { console.log("AAA") })

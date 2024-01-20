@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import { generateInputDictionary} from "../static/main"
+import { generateInputDictionary, validateFormInputs} from "../static/main"
 
 test("Function returns input dictionary and contains some values", () => {
     createMockForm();    
@@ -10,6 +10,16 @@ test("Function returns input dictionary and contains some values", () => {
 
     expect(inputDictionary["name"]).toBe("Paco");
     expect(inputDictionary["address-line-1"]).toBe("fake123");   
+});
+
+test("Validation successful when name contains string", () => {
+    const inputDictionaryMock = {name: "Paco"};
+    expect(validateFormInputs(inputDictionaryMock)).toBeTruthy();
+});
+
+test("Validation fails when name is empty", () => {
+    const inputDictionaryMock = {name: ""};
+    expect(validateFormInputs(inputDictionaryMock)).toBeFalsy();
 });
 
 function createMockForm() {

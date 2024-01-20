@@ -7,7 +7,11 @@
     <title>Document</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'main.css' %}">
-    <link rel="stylesheet" href="{% static 'js/ts/main.js' %}">
+    <script>
+        var exports = {};
+    </script>
+    <script type="text/javascript" src="{% static 'js/ts/main.js' %}"></script>
+
 </head>
 
 <body>
@@ -94,9 +98,11 @@
                     </ul>
 
                     <div class="form-buttons">
-                        <div class="send-form-button" id="create-gym-button" onclick="document.querySelector('.create-gym-form').submit()">
+                        <div class="send-form-button" id="create-gym-button"
+                            onclick="document.querySelector('.create-gym-form').submit()">
                             Create
                         </div>
+                        <script>createButtonWorkflowFcn()</script>
 
                         <!-- When clicked, the cancel button closes the modal -->
                         <div class="send-form-button"

@@ -1,4 +1,7 @@
-export function generateInputDictionary() {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createButtonWorkflowFcn = exports.enableCreateButton = exports.validateFormInputs = exports.generateInputDictionary = void 0;
+function generateInputDictionary() {
     /**
      * This function returns a dictionary with the content of each field of the form used to create gyms:
      * name, address line 1, address line 2, city, post-code and country.
@@ -9,15 +12,16 @@ export function generateInputDictionary() {
     let inputDict = {};
     inputs.forEach((input) => {
         inputDict[input.name.toString()] = input.value;
-        // inputDict.push({key: input.name, value: input.value})
     });
     return inputDict;
 }
-export function validateFormInputs(inputDict) {
+exports.generateInputDictionary = generateInputDictionary;
+function validateFormInputs(inputDict) {
     // The most relevant value we have to check is the name, which should be non-empty.
     return inputDict["name"] !== "";
 }
-export function enableCreateButton(buttonReady) {
+exports.validateFormInputs = validateFormInputs;
+function enableCreateButton(buttonReady) {
     // This function enables the Create button of the gym creation form.
     const buttonId = "#create-gym-button";
     const button = document.querySelector(buttonId);
@@ -30,8 +34,10 @@ export function enableCreateButton(buttonReady) {
         button.setAttribute("onclick", "createButtonFcn()");
     }
 }
-export function createButtonWorkflowFcn() {
+exports.enableCreateButton = enableCreateButton;
+function createButtonWorkflowFcn() {
     const inputDictionary = generateInputDictionary();
     const enableButton = validateFormInputs(inputDictionary);
     enableCreateButton(enableButton);
 }
+exports.createButtonWorkflowFcn = createButtonWorkflowFcn;

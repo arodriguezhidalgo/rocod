@@ -29,11 +29,11 @@ export function enableCreateButton(buttonReady) {
     const button = document.querySelector(buttonId) as HTMLElement;
 
     if (buttonReady === false) {
-        button.setAttribute("id", "create-gym-button_disabled");
+        button.setAttribute("class", "send-form-button_disabled");
         button.setAttribute("onclick", "");
     }
     else {
-        button.setAttribute("id", "create-gym-button");
+        button.setAttribute("class", "send-form-button");
         button.setAttribute("onclick", "createButtonFcn()");                
     }
 }

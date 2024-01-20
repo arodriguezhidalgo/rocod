@@ -26,30 +26,27 @@ test("Create button is disabled when requested", () => {
     // First, we check that the id of the button is "create-gym-form" before validation. 
     let button = document.querySelector("#create-gym-button");
     expect(button).not.toBeNull();
-    expect(button?.getAttribute("onclick")).toBe("dummyFcn()");
+    expect(button?.getAttribute("onclick")).toBe("createButtonFcn()");
 
     // Run the validation. This should disable the button, because we are setting it to do so.
     enableCreateButton(false);
 
-    // Retrieve the button handle again. We have to do this because I chose not to use getElementById().    
-    button = document.querySelector("#create-gym-button");
-
-    // Verify that after the function call, the button stopped existing. This is because we changed its id.
-    expect(button).toBeNull();
-
-    // Get the new handle of the button and verify that it doesn't contain any onclick function (or I should say, it is "").
-    button = document.querySelector("#create-gym-button_disabled");
+    // Verify that the onclick function is an empty string "".
     expect(button?.getAttribute("onclick")).toBe("");
+
+    // Verify that the class of the button changed to disabled.
+    expect(button?.getAttribute("class")).not.toBe("send-form-button");
+    expect(button?.getAttribute("class")).toBe("send-form-button_disabled");
 
     // Then, we call the function again and request it to be enabled.
     enableCreateButton(true);
 
-    // Verify that the id is the initial one, and the onclick function is correct.
-    expect(button).not.toBeNull();
+    // Verify that the class stopped being button_disabled, and got the new value.
+    expect(button?.getAttribute("class")).toBe("send-form-button");
+    expect(button?.getAttribute("class")).not.toBe("send-form-button_disabled");
 
-
-
-    // Retrieve 
+    // Verify that once again we have an onclick function.
+    expect(button?.getAttribute("onclick")).toBe("createButtonFcn()");    
 });
 
 function createMockForm() {
@@ -72,7 +69,7 @@ function createMockForm() {
     // Create the "Create" button to submit the form.
     const createButton = document.createElement("div");
     createButton.setAttribute("id", "create-gym-button");
-    createButton.setAttribute("onclick", "dummyFcn()");
+    createButton.setAttribute("onclick", "createButtonFcn()");
     form.appendChild(createButton);
 
     document.body.appendChild(form);

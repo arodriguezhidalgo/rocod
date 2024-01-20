@@ -126,7 +126,7 @@ h2 {
     background-color: var(--less-dark-color);
 }
 
-#create-gym-button_disabled {
+.send-form-button_disabled {
     background-color: var(--grey-color);
     border: solid var(--grey-color);
     cursor: default;

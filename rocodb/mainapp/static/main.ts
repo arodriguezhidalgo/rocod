@@ -28,7 +28,7 @@ export function enableCreateButton(buttonReady) {
     const buttonId = "#create-gym-button";
     const button = document.querySelector(buttonId) as HTMLElement;
 
-    if (buttonReady === true) {
+    if (buttonReady === false) {
         button.setAttribute("id", "create-gym-button_disabled");
         button.setAttribute("onclick", "");
     }

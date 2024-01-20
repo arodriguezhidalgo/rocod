@@ -3,6 +3,7 @@
     --basic-green-color: #84e28c;
     --dark-color: #000000;
     --less-dark-color: #252525;
+    --grey-color: #808080;
 }
 
 body {
@@ -111,13 +112,11 @@ h2 {
 }
 
 .send-form-button {
-    /* width: 120px; */
     margin: 10px 20px;
     padding: 10px 20px;
     align-items: center;
     border: solid var(--dark-color);
     border-radius: 5px;
-    ;
     cursor: pointer;
     background-color: var(--dark-color);
     color: var(--whiteish-color);
@@ -125,4 +124,10 @@ h2 {
 
 .send-form-button:hover {
     background-color: var(--less-dark-color);
+}
+
+#create-gym-button_disabled {
+    background-color: var(--grey-color);
+    border: solid var(--grey-color);
+    cursor: default;
 }

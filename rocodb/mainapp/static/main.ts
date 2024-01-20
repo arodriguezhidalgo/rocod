@@ -25,4 +25,18 @@ export function validateFormInputs(inputDict): boolean {
 
 export function enableCreateButton(buttonReady) {
     // This function enables the Create button of the gym creation form.
+    const buttonId = "#create-gym-button";
+    const button = document.querySelector(buttonId) as HTMLElement;
+
+    if (buttonReady === true) {
+        button.setAttribute("id", "create-gym-button_disabled");
+        button.setAttribute("onclick", "");
+    }
+    else {
+        button.setAttribute("id", "create-gym-button");
+        button.setAttribute("onclick", "createButtonFcn()");                
+    }
+}
+function createButtonFcn(){
+
 }

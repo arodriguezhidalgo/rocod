@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createButtonWorkflowFcn = exports.enableCreateButton = exports.validateFormInputs = exports.generateInputDictionary = void 0;
+exports.enableButtonWhenNameFieldIsNotEmpty = exports.createButtonWorkflowFcn = exports.enableCreateButton = exports.validateFormInputs = exports.generateInputDictionary = void 0;
 function generateInputDictionary() {
     /**
      * This function returns a dictionary with the content of each field of the form used to create gyms:
@@ -39,5 +39,20 @@ function createButtonWorkflowFcn() {
     const inputDictionary = generateInputDictionary();
     const enableButton = validateFormInputs(inputDictionary);
     enableCreateButton(enableButton);
+    enableButtonWhenNameFieldIsNotEmpty();
 }
 exports.createButtonWorkflowFcn = createButtonWorkflowFcn;
+function enableButtonWhenNameFieldIsNotEmpty() {
+    const nameInputElement = document.querySelector('.form-item-input[name="name"]');
+    console.log(nameInputElement.value);
+    // input - event
+    nameInputElement.addEventListener("input", () => {
+        if (nameInputElement.value === '') {
+            enableCreateButton(false);
+        }
+        else {
+            enableCreateButton(true);
+        }
+    });
+}
+exports.enableButtonWhenNameFieldIsNotEmpty = enableButtonWhenNameFieldIsNotEmpty;

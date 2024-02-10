@@ -1,9 +1,9 @@
 /**
  * @jest-environment jsdom
  */
-import { generateInputDictionary, validateFormInputs, enableCreateButton } from "../ts/main"
+import { generateInputDictionary, validateFormInputs, enableCreateButton, enableButtonWhenNameFieldIsNotEmpty } from "../ts/main"
 
-beforeAll(() => { createMockForm() });
+beforeAll(() => { createMockForm("Paco") });
 
 test("Function returns input dictionary and contains some values", () => {
 
@@ -26,7 +26,8 @@ test("Validation fails when name is empty", () => {
 
 test("Create button is disabled when requested", () => {
     // First, we check that the id of the button is "create-gym-form" before validation. 
-    let button = document.querySelector("#create-gym-button");
+    // let button = document.querySelector("#create-gym-button");
+    let button = iGetCreateButtonHandle();
     expect(button).not.toBeNull();
     expect(button?.getAttribute("onclick")).toBe("createButtonFcn()");
 
@@ -51,7 +52,37 @@ test("Create button is disabled when requested", () => {
     expect(button?.getAttribute("onclick")).toBe("createButtonFcn()");
 });
 
-function createMockForm() {
+test("Create button in the form is disabled whenever the Name field is empty.", () => {
+    // Create a form with an empty name field.
+    const button1 = iGetCreateButtonHandle() as HTMLDivElement;
+
+    console.log(button1.getAttribute("class"));
+
+
+    const form = document.querySelector("form") as Node;
+    document.body.removeChild(form);
+    
+    createMockForm('');
+    console.log(iGetCreateButtonHandle());
+
+    enableButtonWhenNameFieldIsNotEmpty();
+    const button = iGetCreateButtonHandle() as HTMLDivElement;
+
+    console.log(button.getAttribute("class"));
+
+});
+
+test("Create button in the form is enabled whenever the Name field contains some text.", () => {
+
+});
+
+function iGetCreateButtonHandle(): HTMLDivElement | null {
+    // This function can return either an htmlElement or a null.
+    return document.querySelector("#create-gym-button");
+}
+
+
+function createMockForm(nameFieldValue: string) {
     const form = document.createElement("form");
     form.setAttribute("class", "create-gym-form");
 
@@ -59,7 +90,10 @@ function createMockForm() {
     const item = document.createElement("input");
     item.setAttribute("class", "form-item-input");
     item.setAttribute("name", "name");
-    item.setAttribute("value", "Paco");
+    // Set the name field if requested
+    if (nameFieldValue !== '') {
+        item.setAttribute("value", nameFieldValue);        
+    }
     form.appendChild(item);
 
     const item2 = document.createElement("input");
